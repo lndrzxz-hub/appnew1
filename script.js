@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!isValid) return;
 
-        // Critério: Altura >= 1.70 e Idade >= 18
+        // Critério: Altura >= 1.70 e Idade >= 18 - outra alteração
         const isEligible = (height >= 1.70) && (age >= 18);
 
         openPopup(name, age, height, isEligible);
