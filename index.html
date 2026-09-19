@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEMA SELETIVO // VERIFICAÇÃO DE ELEGIBILIDADE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="cyber-grid">
+
+    <!-- Esferas de iluminação ambiente -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <!-- Container Principal Card Glassmorphism -->
+    <main class="card glass-panel neon-border-cyan">
+        
+        <div class="card-top-bar">
+            <div class="status-indicator">
+                <span class="ping-dot"></span>
+                <span class="status-title">RECRUTAMENTO // V.2.0</span>
+            </div>
+            <span class="system-tag">SYS_CHECK_ONLINE</span>
+        </div>
+
+        <header class="header">
+            <h1>VERIFICAÇÃO DE <span class="neon-text-cyan">ELEGIBILIDADE</span></h1>
+            <p>Informe os dados cadastrais para validação de requisitos.</p>
+        </header>
+
+        <form id="eligibilityForm" novalidate>
+            <div class="form-group">
+                <label for="name">Nome Completo</label>
+                <input type="text" id="name" placeholder="Ex: Lucas Andrade">
+                <p id="nameError" class="error-msg hidden">Informe um nome válido.</p>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="age">Idade <span class="unit">(ANOS)</span></label>
+                    <input type="number" id="age" min="1" max="120" placeholder="Ex: 21">
+                    <p id="ageError" class="error-msg hidden">Idade inválida.</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="height">Altura <span class="unit">(METROS)</span></label>
+                    <input type="number" id="height" step="0.01" min="0.5" max="2.5" placeholder="Ex: 1.75">
+                    <p id="heightError" class="error-msg hidden">Altura inválida.</p>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit">PROCESSAR DADOS</button>
+        </form>
+
+        <footer class="card-footer">
+            <span>CRITÉRIOS: IDADE &ge; 18 ANOS | ALTURA &ge; 1.70 M</span>
+        </footer>
+    </main>
+
+    <!-- POPUP MODAL -->
+    <div id="popupOverlay" class="popup-overlay hidden">
+        <div id="popupContainer" class="popup-container glass-modal">
+            
+            <div id="modalIconContainer" class="icon-box">
+                <span id="modalIcon"></span>
+            </div>
+
+            <h2 id="modalStatusTitle"></h2>
+            <p id="modalMessage"></p>
+
+            <div id="modalSummary" class="modal-summary"></div>
+
+            <button id="closePopupBtn" type="button" class="btn-ok">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
